@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+@layer components {
+    .underline-animation::before {
+      @apply absolute bottom-0 left-0 w-0 h-0.5 rounded-md bg-white transition-all duration-300 ease-out;
+      content: "";
+    }
+    
+    .underline-animation:hover::before {
+      @apply w-full;
+    }
+  }
+
+.card11{
+    @apply lg:h-96 lg:w-60 hover:text-white hover:bg-blue5 h-60 w-40 shadow-lg bg-white flex-col rounded-lg flex items-center justify-center transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300 flex-none
+  }
+.card12{
+    @apply lg:w-20 lg:h-20 w-12 h-12 lg:mb-0 -mb-2
+}
+.card13{
+    @apply font-bold lg:text-2xl text-lg text-center 
+}
+.card14{
+    @apply font-medium font-poppins lg:text-base text-sm text-center tracking-tighter lg:my-4 my-1
+}
+
+.menuprzycisk{
+    @apply text-gray-200 hover:text-white rounded-md font-medium relative underline-animation
+}
