@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>  
+  <title>InfoBase</title>
   <link href="/dist/output.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <meta name="description" content="Serwis firmy INFOBASE zajmującej sie produkcja oprogramowania. Podstawowy produkt naszej firmy ZSI PULSAR jest kompleksowym systemem wspomagającym zarządzanie w firmie." />
+  <meta name="keywords" content="oracle, transport, produkcja, CRM, koszty, RFID, TAG, magazyn wysokiego składowania, automatyczna identyfikacja, antena, czytnik, automatyczny magazyn,  kody kreskowe, zarządzanie produkcją, logistyka sprzedaży, B2B, finanse, wielowalutowość, spedycja, warsztat, stacja obsługi, kalkulacje, technologia, systemy informatyczne, komputeryzacja, programy komputerowe, zintegrowane systemy informatyczne, PULSAR, Turek, optymalizacja dystrybucji, odys, pakowanie, algorytm pakowania, najkrótsza droga, tir, optymalizacja trasy," />
 
 </head>
 <body>
@@ -19,7 +19,7 @@
 
     <header class="fixed top-0 z-50 w-full">
       <div class="sticky-header px-4 py-3 flex lg:text-xl items-center bg-transparent transition-all duration-300 justify-between">
-        <div class="text-xl font-sans font-bold">
+        <div class="text-xl font-sans font-bold z-20">
           <a href="infobase.com.pl"><img src="/img/Logo_B.png" alt="Logo" class="logoo transition-all duration-300 lg:h-16 h-10 w-auto sm:ml-10 "></a>
         </div>
         <nav class="hidden md:block space-x-6 font-poppins mx-5 sm:mr-10 ">
@@ -30,7 +30,7 @@
           <a href="#" class="menuprzycisk menubutton">Kontakt</a>
         </nav>
         <!--Mobilne-->
-        <div class="md:hidden flex items-center">
+        <div class="md:hidden flex items-center z-20">
             <button class="mobile-menu-button">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -41,10 +41,10 @@
     
     
     
-    <div class="mobile-menu z-10 mt-14 hidden md:hidden top-0 w-full h-fit animate-fade-down animate-duration-[1000ms] absolute bg-blue2 bg-opacity-60 font-sans text-white">
+    <div class="mobile-menu z-1  hidden md:hidden top-0 w-full h-fit animate-fade-down animate-duration-[1000ms] absolute bg-blue2 bg-opacity-60 font-sans text-white">
       
       
-      <a href="#" class="text-center m-3 block py-2 px-4 text-base ">Strona Główna</a>
+      <a href="#" class="text-center m-3 block mt-14 py-2 px-4 text-base ">Strona Główna</a>
       <a href="#" class="text-center m-3 block py-2 px-4 text-base ">Firma</a>
       <a href="#" class="text-center m-3 block py-2 px-4 text-base ">Klienci</a>
       <a href="#" class="text-center m-3 block py-2 px-4 text-base ">Aktualności</a>
@@ -76,14 +76,14 @@
         header.classList.remove('lg:text-xl');
         header.classList.add('lg:text-lg');
         header.classList.remove('bg-transparent');
-        header.classList.add('bg-blue1');
+        header.classList.add('bg-blue2');
         logo.classList.remove('lg:h-16');
         logo.classList.add('lg:h-10');
       } else {
        
         header.classList.remove('lg:text-lg');
         header.classList.add('lg:text-xl');
-        header.classList.remove('bg-blue1');
+        header.classList.remove('bg-blue2');
         header.classList.add('bg-transparent');
         logo.classList.add('lg:h-16');
         logo.classList.remove('lg:h-10');
@@ -127,11 +127,12 @@
       
       <div class="max-h-128 relative md:m-0 "> <!-- Add a relative class here -->
         
-        <video loop autoplay class="w-full xl:h-128 md:h-110 sm:h-110 h-111 object-cover object-center overflow-hidden z-1"> <!-- Add z-index class here -->
+        <video autoplay muted playsinline loop class="w-full xl:h-128 md:h-110 sm:h-110 h-111 object-cover object-center overflow-hidden z-1"> <!-- Add z-index class here -->
             <source src="/img/film.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
         </video>
         
+     
         <div class="absolute inset-0 bg-blue2 opacity-75 z-1" ></div> <!-- Add an absolute class here -->
 
 
@@ -157,8 +158,22 @@
 
   
     
-    
-      
+       <script>
+
+          document.addEventListener('DOMContentLoaded', function() {
+            var video = document.querySelector('video');
+
+            video.loop = true;    // Ustawienie wideo do zapętlenia
+            video.play();         // Próba odtworzenia wideo
+
+            // Jeśli wideo nie zacznie się automatycznie odtwarzać, możemy spróbować odtworzyć je po pierwszym kliknięciu na stronie
+            document.body.addEventListener('click', function() {
+              video.play();
+            });
+          });
+        </script>
+
+        
 
    
 
@@ -199,84 +214,7 @@
 
       
     </section>
-    <section id="box2" class="w-full bg-transparent h-auto py-5 px-1 lg:px-5 flex items-center justify-center">
 
-
-      <div class="grid md:grid-cols-4 lg:gap-8 md:gap-4  sm:gap-4 gap-2 grid-cols-2 grid-rows-2 md:grid-rows-1 ">
-        <div class="card11 ">
-          <div class="lg:my-5 my-1">
-            <img src="/img/robot.svg" alt="robot" class="card12">
-          </div>
-          <div id="text" class="p-4">
-            <div class="card13">
-              <p>Przemysł 4.0</p>
-            </div>
-            <div class="card14">
-              <p>Nowa era przemysłu oparta na zaawansowanych technologiach i automatyzacji.</p>
-            </div>
-          </div>
-        </div>
-      
-      
-  
-        <div class="card11 ">
-          <div class="lg:my-5 my-1">
-            <img src="/img/fork.svg" alt="robot" class="card12">
-          </div>
-          <div id="text" class="p-4">
-            <div class="card13">
-              <p>Lorem ipsum</p>
-            </div>
-            <div class="card14">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ultrices elementum neque.</p>
-              
-            </div>
-          </div>
-          </div>
-        
-        
-        <div class="card11">
-          <div class="lg:my-5 my-1">
-            <img src="/img/dopasowanie.svg" alt="robot" class="card12">
-          </div>
-          <div id="text" class="p-4">
-            <div class="card13">
-              <p>Dopasowanie</p>
-            </div>
-            <div class="card14">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ultrices elementum neque.</p>
-              
-            </div>
-          </div>
-        </div>
-        
-  
-        <div class="card11">
-          <div class="lg:my-5 my-1">
-            <img src="/img/dos2.svg" alt="robot" class="card12">
-          </div>
-          <div id="text" class="p-4">
-            <div class="card13">
-              <p>30 lat</p>
-              <p class="-m-2">Doświadczenia</p>
-            </div>
-            <div class="card14">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ultrices.</p>
-            </div>
-          </div>
-          
-        </div>
-        
-    
-        
-      </div>
-      
-        
-     
-     
-
-      
-    </section>
 
     <script>
 
@@ -306,9 +244,21 @@
           
         
         
-        <div class="w-full flex flex-row flex-wrap lg:flex-row  max-m:h-15 mb-20">
+        <div class="w-full flex flex-row flex-wrap lg:flex-row max-m:h-15 mb-20">
+          <div class="lg:w-1/4 w-1/2 relative group h-full">
+              <img src="/img/o1.webp" alt="random-image" class="object-cover w-full h-full">
+              <p class="text-center absolute inset-0 flex items-center text-shadow-xl justify-center font-poppins lg:text-3xl md:text-2xl text-xl z-10 text-white whitespace-pre-line select-none">E-commerce</p>
+              <div class="absolute inset-0 bg-blue3 bg-opacity-80 flex items-center justify-center opacity-50"></div>
+              <div class="absolute inset-0 bg-blue2 bg-opacity-80 flex items-center z-8 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
+              <div class="absolute inset-0 bg-transparent flex items-center z-20 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
+                  <button type="button" class="absolute animate-fade-up animate-duration-[1500ms] z-30 animate-delay-[300ms] text-gray-900 self-end md:mb-6 mb-2 z-11 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-gray-200 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 bg-opacity-30 dark:hover:border-gray-600 dark:focus:ring-gray-700"><a href="#">Czytaj więcej</a></button>
+              </div>
+          </div>
+          
+      
+    
           <div class=" lg:w-1/4 w-1/2 relative group  ">
-            <img src="/img/o1.webp" alt="random-image" class="object-cover">
+            <img src="/img/o2.webp" alt="random-image" class="object-cover w-full h-full">
             <p class="text-center absolute inset-0 flex items-center text-shadow-xl justify-center font-poppins lg:text-3xl md:text-2xl text-xl z-10 text-white whitespace-pre-line select-none">WMS RFID</p>
             <div class="absolute inset-0 bg-blue3 bg-opacity-80 flex items-center justify-center opacity-50"></div>
             <div class="absolute inset-0 bg-blue2 bg-opacity-80 flex items-center z-8 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
@@ -319,10 +269,81 @@
            dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 bg-opacity-30 dark:hover:border-gray-600 dark:focus:ring-gray-700"><a href="#">Czytaj więcej</a></button> 
             </div>
           </div> 
-    
+
+          
           <div class=" lg:w-1/4 w-1/2 relative group  ">
-            <img src="/img/o2.webp" alt="random-image" class="object-cover">
-            <p class="text-center absolute inset-0 flex items-center text-shadow-xl justify-center font-poppins lg:text-3xl md:text-2xl text-xl z-10 text-white whitespace-pre-line select-none">Magazynowanie</p>
+            <img src="/img/o3.webp" alt="random-image" class="object-cover w-full h-full">
+            <p class="text-center absolute inset-0 flex items-center text-shadow-xl justify-center font-poppins lg:text-3xl md:text-2xl text-xl z-10 text-white whitespace-pre-line select-none">Produkcja</p>
+            <div class="absolute inset-0 bg-blue3 bg-opacity-80 flex items-center justify-center opacity-50"></div>
+            <div class="absolute inset-0 bg-blue2 bg-opacity-80 flex items-center z-8 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
+            </div>
+            <div class="absolute inset-0 bg-transparent flex items-center z-20 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
+             <button type="button" class="absolute animate-fade-up animate-duration-[1500ms] z-30 animate-delay-[300ms] text-gray-900 self-end md:mb-6 mb-2 z-11 bg-white border border-gray-300 focus:outline-none
+          hover:bg-gray-100 focus:ring-gray-200 font-medium rounded-lg text-xs px-5 py-2.5 mr-2  dark:bg-gray-800
+           dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 bg-opacity-30 dark:hover:border-gray-600 dark:focus:ring-gray-700"><a href="#">Czytaj więcej</a></button> 
+            </div>
+          </div> 
+
+          
+          <div class=" lg:w-1/4 w-1/2 relative group  ">
+            <img src="/img/o4.webp" alt="random-image" class="object-cover w-full h-full">
+            <p class="text-center absolute inset-0 flex items-center text-shadow-xl justify-center font-poppins lg:text-3xl md:text-2xl text-xl z-10 text-white whitespace-pre-line select-none">Transport</p>
+            <div class="absolute inset-0 bg-blue3 bg-opacity-80 flex items-center justify-center opacity-50"></div>
+            <div class="absolute inset-0 bg-blue2 bg-opacity-80 flex items-center z-8 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
+            </div>
+            <div class="absolute inset-0 bg-transparent flex items-center z-20 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
+             <button type="button" class="absolute animate-fade-up animate-duration-[1500ms] z-30 animate-delay-[300ms] text-gray-900 self-end md:mb-6 mb-2 z-11 bg-white border border-gray-300 focus:outline-none
+          hover:bg-gray-100 focus:ring-gray-200 font-medium rounded-lg text-xs px-5 py-2.5 mr-2  dark:bg-gray-800
+           dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 bg-opacity-30 dark:hover:border-gray-600 dark:focus:ring-gray-700"><a href="#">Czytaj więcej</a></button> 
+            </div>
+          </div> 
+
+          
+          <div class=" lg:w-1/4 w-1/2 relative group  ">
+            <img src="/img/o5.webp" alt="random-image" class="object-cover w-full h-full">
+            <p class="text-center absolute inset-0 flex items-center text-shadow-xl justify-center font-poppins lg:text-3xl md:text-2xl text-xl z-10 text-white whitespace-pre-line select-none">EDI</p>
+            <div class="absolute inset-0 bg-blue3 bg-opacity-80 flex items-center justify-center opacity-50"></div>
+            <div class="absolute inset-0 bg-blue2 bg-opacity-80 flex items-center z-8 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
+            </div>
+            <div class="absolute inset-0 bg-transparent flex items-center z-20 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
+             <button type="button" class="absolute animate-fade-up animate-duration-[1500ms] z-30 animate-delay-[300ms] text-gray-900 self-end md:mb-6 mb-2 z-11 bg-white border border-gray-300 focus:outline-none
+          hover:bg-gray-100 focus:ring-gray-200 font-medium rounded-lg text-xs px-5 py-2.5 mr-2  dark:bg-gray-800
+           dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 bg-opacity-30 dark:hover:border-gray-600 dark:focus:ring-gray-700"><a href="#">Czytaj więcej</a></button> 
+            </div>
+          </div> 
+          
+          
+          <div class=" lg:w-1/4 w-1/2 relative group  ">
+            <img src="/img/o6.webp" alt="random-image" class="object-cover w-full h-full">
+            <p class="text-center absolute inset-0 flex items-center text-shadow-xl justify-center font-poppins lg:text-3xl md:text-2xl text-xl z-10 text-white whitespace-pre-line select-none">PTP</p>
+            <div class="absolute inset-0 bg-blue3 bg-opacity-80 flex items-center justify-center opacity-50"></div>
+            <div class="absolute inset-0 bg-blue2 bg-opacity-80 flex items-center z-8 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
+            </div>
+            <div class="absolute inset-0 bg-transparent flex items-center z-20 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
+             <button type="button" class="absolute animate-fade-up animate-duration-[1500ms] z-30 animate-delay-[300ms] text-gray-900 self-end md:mb-6 mb-2 z-11 bg-white border border-gray-300 focus:outline-none
+          hover:bg-gray-100 focus:ring-gray-200 font-medium rounded-lg text-xs px-5 py-2.5 mr-2  dark:bg-gray-800
+           dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 bg-opacity-30 dark:hover:border-gray-600 dark:focus:ring-gray-700"><a href="#">Czytaj więcej</a></button> 
+            </div>
+          </div>
+          
+          
+          <div class=" lg:w-1/4 w-1/2 relative group  ">
+            <img src="/img/o7.webp" alt="random-image" class="object-cover w-full h-full">
+            <p class="text-center absolute inset-0 flex items-center text-shadow-xl justify-center font-poppins lg:text-3xl md:text-2xl text-xl z-10 text-white whitespace-pre-line select-none">Magazyn</p>
+            <div class="absolute inset-0 bg-blue3 bg-opacity-80 flex items-center justify-center opacity-50"></div>
+            <div class="absolute inset-0 bg-blue2 bg-opacity-80 flex items-center z-8 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
+            </div>
+            <div class="absolute inset-0 bg-transparent flex items-center z-20 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
+             <button type="button" class="absolute animate-fade-up animate-duration-[1500ms] z-30 animate-delay-[300ms] text-gray-900 self-end md:mb-6 mb-2 z-11 bg-white border border-gray-300 focus:outline-none
+          hover:bg-gray-100 focus:ring-gray-200 font-medium rounded-lg text-xs px-5 py-2.5 mr-2  dark:bg-gray-800
+           dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 bg-opacity-30 dark:hover:border-gray-600 dark:focus:ring-gray-700"><a href="#">Czytaj więcej</a></button> 
+            </div>
+          </div> 
+
+          
+          <div class=" lg:w-1/4 w-1/2 relative group  ">
+            <img src="/img/o8.webp" alt="random-image" class="object-cover w-full h-full">
+            <p class="text-center absolute inset-0 flex items-center text-shadow-xl justify-center font-poppins lg:text-3xl md:text-2xl text-xl z-10 text-white whitespace-pre-line select-none">API</p>
             <div class="absolute inset-0 bg-blue3 bg-opacity-80 flex items-center justify-center opacity-50"></div>
             <div class="absolute inset-0 bg-blue2 bg-opacity-80 flex items-center z-8 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
             </div>
@@ -334,70 +355,7 @@
           </div> 
           
           <div class=" lg:w-1/4 w-1/2 relative group  ">
-            <img src="/img/o3.webp" alt="random-image" class="object-cover">
-            <p class="text-center absolute inset-0 flex items-center text-shadow-xl justify-center font-poppins lg:text-3xl md:text-2xl text-xl z-10 text-white whitespace-pre-line select-none">Logistyka 
-              Zaopatrzenia</p>
-            <div class="absolute inset-0 bg-blue3 bg-opacity-80 flex items-center justify-center opacity-50"></div>
-            <div class="absolute inset-0 bg-blue2 bg-opacity-80 flex items-center z-8 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
-            </div>
-            <div class="absolute inset-0 bg-transparent flex items-center z-20 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
-             <button type="button" class="absolute animate-fade-up animate-duration-[1500ms] z-30 animate-delay-[300ms] text-gray-900 self-end md:mb-6 mb-2 z-11 bg-white border border-gray-300 focus:outline-none
-          hover:bg-gray-100 focus:ring-gray-200 font-medium rounded-lg text-xs px-5 py-2.5 mr-2  dark:bg-gray-800
-           dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 bg-opacity-30 dark:hover:border-gray-600 dark:focus:ring-gray-700"><a href="#">Czytaj więcej</a></button> 
-            </div>
-          </div> 
-    
-          <div class=" lg:w-1/4 w-1/2 relative group  ">
-            <img src="/img/o4.webp" alt="random-image" class="object-cover">
-            <p class="text-center absolute inset-0 flex items-center text-shadow-xl justify-center font-poppins lg:text-3xl md:text-2xl text-xl z-10 text-white whitespace-pre-line select-none">Produkcja</p>
-            <div class="absolute inset-0 bg-blue3 bg-opacity-80 flex items-center justify-center opacity-50"></div>
-            <div class="absolute inset-0 bg-blue2 bg-opacity-80 flex items-center z-8 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
-            </div>
-            <div class="absolute inset-0 bg-transparent flex items-center z-20 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
-             <button type="button" class="absolute animate-fade-up animate-duration-[1500ms] z-30 animate-delay-[300ms] text-gray-900 self-end md:mb-6 mb-2 z-11 bg-white border border-gray-300 focus:outline-none
-          hover:bg-gray-100 focus:ring-gray-200 font-medium rounded-lg text-xs px-5 py-2.5 mr-2  dark:bg-gray-800
-           dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 bg-opacity-30 dark:hover:border-gray-600 dark:focus:ring-gray-700"><a href="#">Czytaj więcej</a></button> 
-            </div>
-          </div> 
-          <div class=" lg:w-1/4 w-1/2 relative group  ">
-            <img src="/img/o4.webp" alt="random-image" class="object-cover">
-            <p class="text-center absolute inset-0 flex items-center text-shadow-xl justify-center font-poppins lg:text-3xl md:text-2xl text-xl z-10 text-white whitespace-pre-line select-none">Produkcja</p>
-            <div class="absolute inset-0 bg-blue3 bg-opacity-80 flex items-center justify-center opacity-50"></div>
-            <div class="absolute inset-0 bg-blue2 bg-opacity-80 flex items-center z-8 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
-            </div>
-            <div class="absolute inset-0 bg-transparent flex items-center z-20 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
-             <button type="button" class="absolute animate-fade-up animate-duration-[1500ms] z-30 animate-delay-[300ms] text-gray-900 self-end md:mb-6 mb-2 z-11 bg-white border border-gray-300 focus:outline-none
-          hover:bg-gray-100 focus:ring-gray-200 font-medium rounded-lg text-xs px-5 py-2.5 mr-2  dark:bg-gray-800
-           dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 bg-opacity-30 dark:hover:border-gray-600 dark:focus:ring-gray-700"><a href="#">Czytaj więcej</a></button> 
-            </div>
-          </div> 
-          <div class=" lg:w-1/4 w-1/2 relative group  ">
-            <img src="/img/o4.webp" alt="random-image" class="object-cover">
-            <p class="text-center absolute inset-0 flex items-center text-shadow-xl justify-center font-poppins lg:text-3xl md:text-2xl text-xl z-10 text-white whitespace-pre-line select-none">Produkcja</p>
-            <div class="absolute inset-0 bg-blue3 bg-opacity-80 flex items-center justify-center opacity-50"></div>
-            <div class="absolute inset-0 bg-blue2 bg-opacity-80 flex items-center z-8 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
-            </div>
-            <div class="absolute inset-0 bg-transparent flex items-center z-20 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
-             <button type="button" class="absolute animate-fade-up animate-duration-[1500ms] z-30 animate-delay-[300ms] text-gray-900 self-end md:mb-6 mb-2 z-11 bg-white border border-gray-300 focus:outline-none
-          hover:bg-gray-100 focus:ring-gray-200 font-medium rounded-lg text-xs px-5 py-2.5 mr-2  dark:bg-gray-800
-           dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 bg-opacity-30 dark:hover:border-gray-600 dark:focus:ring-gray-700"><a href="#">Czytaj więcej</a></button> 
-            </div>
-          </div> 
-          <div class=" lg:w-1/4 w-1/2 relative group  ">
-            <img src="/img/o4.webp" alt="random-image" class="object-cover">
-            <p class="text-center absolute inset-0 flex items-center text-shadow-xl justify-center font-poppins lg:text-3xl md:text-2xl text-xl z-10 text-white whitespace-pre-line select-none">Produkcja</p>
-            <div class="absolute inset-0 bg-blue3 bg-opacity-80 flex items-center justify-center opacity-50"></div>
-            <div class="absolute inset-0 bg-blue2 bg-opacity-80 flex items-center z-8 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
-            </div>
-            <div class="absolute inset-0 bg-transparent flex items-center z-20 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
-             <button type="button" class="absolute animate-fade-up animate-duration-[1500ms] z-30 animate-delay-[300ms] text-gray-900 self-end md:mb-6 mb-2 z-11 bg-white border border-gray-300 focus:outline-none
-          hover:bg-gray-100 focus:ring-gray-200 font-medium rounded-lg text-xs px-5 py-2.5 mr-2  dark:bg-gray-800
-           dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 bg-opacity-30 dark:hover:border-gray-600 dark:focus:ring-gray-700"><a href="#">Czytaj więcej</a></button> 
-            </div>
-          </div> 
-    
-          <div class=" lg:w-1/4 w-1/2 relative group  ">
-            <img src="/img/o5.webp" alt="random-image" class="object-cover">
+            <img src="/img/o9.webp" alt="random-image" class="object-cover w-full h-full">
             <p class="text-center absolute inset-0 flex items-center text-shadow-xl justify-center font-poppins lg:text-3xl md:text-2xl text-xl z-10 text-white whitespace-pre-line select-none">Logistyka 
               Sprzedaży</p>
             <div class="absolute inset-0 bg-blue3 bg-opacity-80 flex items-center justify-center opacity-50"></div>
@@ -409,23 +367,55 @@
            dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 bg-opacity-30 dark:hover:border-gray-600 dark:focus:ring-gray-700"><a href="#">Czytaj więcej</a></button> 
             </div>
           </div> 
-    
           
           
-    
+          <div class=" lg:w-1/4 w-1/2 relative group  ">
+            <img src="/img/o10.webp" alt="random-image" class="object-cover w-full h-full">
+            <p class="text-center absolute inset-0 flex items-center text-shadow-xl justify-center font-poppins lg:text-3xl md:text-2xl text-xl z-10 text-white whitespace-pre-line select-none">Edytor etykiet</p>
+            <div class="absolute inset-0 bg-blue3 bg-opacity-80 flex items-center justify-center opacity-50"></div>
+            <div class="absolute inset-0 bg-blue2 bg-opacity-80 flex items-center z-8 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
+            </div>
+            <div class="absolute inset-0 bg-transparent flex items-center z-20 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
+             <button type="button" class="absolute animate-fade-up animate-duration-[1500ms] z-30 animate-delay-[300ms] text-gray-900 self-end md:mb-6 mb-2 z-11 bg-white border border-gray-300 focus:outline-none
+          hover:bg-gray-100 focus:ring-gray-200 font-medium rounded-lg text-xs px-5 py-2.5 mr-2  dark:bg-gray-800
+           dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 bg-opacity-30 dark:hover:border-gray-600 dark:focus:ring-gray-700"><a href="#">Czytaj więcej</a></button> 
+            </div>
+          </div>
           
-          
-    
-    
-          
-    
-    
+        
+          <div class=" lg:w-1/4 w-1/2 relative group  ">
+            <img src="/img/o11.webp" alt="random-image" class="object-cover w-full h-full">
+            <p class="text-center absolute inset-0 flex items-center text-shadow-xl justify-center font-poppins lg:text-3xl md:text-2xl text-xl z-10 text-white whitespace-pre-line select-none">Informator24</p>
+            <div class="absolute inset-0 bg-blue3 bg-opacity-80 flex items-center justify-center opacity-50"></div>
+            <div class="absolute inset-0 bg-blue2 bg-opacity-80 flex items-center z-8 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
+            </div>
+            <div class="absolute inset-0 bg-transparent flex items-center z-20 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
+             <button type="button" class="absolute animate-fade-up animate-duration-[1500ms] z-30 animate-delay-[300ms] text-gray-900 self-end md:mb-6 mb-2 z-11 bg-white border border-gray-300 focus:outline-none
+          hover:bg-gray-100 focus:ring-gray-200 font-medium rounded-lg text-xs px-5 py-2.5 mr-2  dark:bg-gray-800
+           dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 bg-opacity-30 dark:hover:border-gray-600 dark:focus:ring-gray-700"><a href="#">Czytaj więcej</a></button> 
+            </div>
+          </div> 
+
+          <div class=" lg:w-1/4 w-1/2 relative group  ">
+            <img src="/img/o12.webp" alt="random-image" class="object-cover w-full h-full">
+            <p class="text-center absolute inset-0 flex items-center text-shadow-xl justify-center font-poppins lg:text-3xl md:text-2xl text-xl z-10 text-white whitespace-pre-line select-none">Logistyka 
+              Zaopatrzenia</p>
+            <div class="absolute inset-0 bg-blue3 bg-opacity-80 flex items-center justify-center opacity-50"></div>
+            <div class="absolute inset-0 bg-blue2 bg-opacity-80 flex items-center z-8 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
+            </div>
+            <div class="absolute inset-0 bg-transparent flex items-center z-20 justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300">
+             <button type="button" class="absolute animate-fade-up animate-duration-[1500ms] z-30 animate-delay-[300ms] text-gray-900 self-end md:mb-6 mb-2 z-11 bg-white border border-gray-300 focus:outline-none
+          hover:bg-gray-100 focus:ring-gray-200 font-medium rounded-lg text-xs px-5 py-2.5 mr-2  dark:bg-gray-800
+           dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 bg-opacity-30 dark:hover:border-gray-600 dark:focus:ring-gray-700"><a href="#">Czytaj więcej</a></button> 
+            </div>
+          </div> 
+         
         </div>
         
         
     </div>
       
-    
+    Tu będą Aktualności
     
     
     <script>
@@ -469,57 +459,52 @@
     
   </main>
 
-  <footer class="bg-blue2 text-white w-full m-0 overflow-x-hidden font-poppins">
-    <div class="w-full max-w-screen-6xl p-4 py-6 lg:py-8">
-        <div class="md:flex md:justify-around justify-center">
-          <div class="md:mb-6 mb-4 md:ml-5 flex justify-center md:justify-start">
-              <a href="#" class="flex place-self-start md:justify-items-centerjustify-items-center">
-                  <img src="/img/Logo_B.png" class="lg:h-20 md:16 h-10 md:mr-3" alt="Logo" />
-                  
-              </a>
-          </div>
-          <div class="flex flex-row text-center gap-10 justify-center justify-items-center mx-10">
-              <div>
-                  <h2 class="mb-6 text-xl font-semibold text-white uppercase">Firma</h2>
-                  <ul class="text-gray-300 md:text-base text-sm font-medium">
-                      <li class="mb-4">
-                          <a href="#" class="hover:underline ">Oferta</a>
-                      </li>
-                      <li class="mb-4">
-                          <a href="#" class="hover:underline">Klienci</a>
-                      </li>
-                      <li class="mb-4">
-                        <a href="#" class="hover:underline">Aktualności</a>
-                    </li>
-                  </ul>
-              </div>
-              <div>
-                  <h2 class="mb-6 text-xl font-semibold text-white uppercase ">KONTAKT</h2>
-                  <ul class="text-gray-300 md:text-base text-sm font-medium">
-                      <li class="mb-4">
-                          <p>Kolska Szosa 30</p>
-                          <p>62-700 Turek</p>
+  <footer class="scrollbar-hide overflow-x-hidden text-white font-poppins">
 
-                      </li>
-                      <li class="mb-4 ">
-                        <p>kontakt@infobase.com.pl</p>
-                      </li>
-                      <li class="mb-4">
-                          <p>+48123123123</p>
-                      </li>
-                  </ul>
-              </div>
+    <div class="p-5 bg-blue2 w-full h-fit ">
+      <div class="max-w-screen-6xl md:py-5 py-0 px-5 ">
+        <div class="grid md:grid-cols-5 grid-cols-2 md:grid-rows-1 place-content-center justify-items-center">
+          <div class="md:col-span-1 col-span-2 md:py-5 md:m-0 m-5">
+            <img src="/img/Logo_B.png" alt="logo" class="max-h-20 w-auto">
           </div>
+          <div class="md:p-5 md:text-left text-center">
+            <a href="#" class="my-5 md:text-2xl text-xl font-semibold underline-animation">Firma</a><br>
+            <a href="#" class="my-5 md:text-base text-sm font-light">Oferta</a><br>
+            <a href="#" class="my-5 md:text-base text-sm font-light">Aktulaności</a><br>
+            <a href="#" class="my-5 md:text-base text-sm font-light">Klienci</a><br>
+          </div>
+          <div class="md:p-5 md:text-left text-center">
+            <a href="#" class="my-5 md:text-2xl text-xl font-semibold underline-animation">Firma</a><br>
+            <a href="#" class="my-5 md:text-base text-sm font-light">Oferta</a><br>
+            <a href="#" class="my-5 md:text-base text-sm font-light">Aktulaności</a><br>
+            <a href="#" class="my-5 md:text-base text-sm font-light">Klienci</a><br>
+            
+          </div>
+          <div class="md:p-5 py-5 md:col-span-1 col-span-2 md:text-left text-center">
+            <a href="#" class="my-5 md:text-2xl text-3xl font-semibold mb-10 underline-animation">Kontakt</a><br>
+            <a href="#" class="my-5 md:text-base sm:text-sm text-base font-light">Kolska Szosa 30</a><br>
+            <a href="#" class="my-5 md:text-base sm:text-sm text-base font-light">62-700 Turek</a><br>
+            <a href="#" class="my-5 md:text-base sm:text-sm text-base font-light">+48 123-123-123</a><br>
+            <a href="#" class="my-5 md:text-base sm:text-sm text-base font-light">kontakt@infobase.com.pl
+
+            </a><br>
+          </div>
+          <div class="p-5 md:col-span-1 col-span-2 ">
+            <img src="/img/TreflGdansk_Logo.png" alt="logo" class="max-h-40 w-auto">
+            <p class="text-center md:text-base text-base">Oficjalny partner</p>
+          </div>
+
+        </div>
+
       </div>
-      <hr class="my-6 border-gray-200  dark:border-gray-700 lg:my-8" />
-      <div class="flex justify-center items-center">
-          <span class="text-sm text-gray-500 sm:text-center ml-5 dark:text-gray-400">© 2023 <a href="" class="hover:underline">Infobase™</a>
-          
-          
+
+      <div class="h-15 flex items-center justify-center">
+        <p class="font-poppins font-light sm:text-sm text-xs ">Copyrights © 2023 InfoBase Systemy Informatyczne</p>
       </div>
     </div>
-</footer>
-  
+
+
+  </footer>
 
 </body>
 </html>
